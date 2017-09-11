@@ -38,7 +38,7 @@ button.onclick = function()
 };
 
 var nameInput = document.getElementById('name');
-var name = nameInput.value;
+
 var submitButton = document.getElementById('submit');
 
 submitButton.onclick =function()
@@ -63,7 +63,8 @@ submitButton.onclick =function()
             }
         }
     };
-    
+    var nameInput = document.getElementById('name');
+    var name = nameInput.value;
    request.open('GET', 'http://divyatulasi93.imad.hasura-app.io/submitname?name=' + name, true );
    request.send(null);
    
