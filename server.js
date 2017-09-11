@@ -9,17 +9,136 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var elements = {
+    one : {
+        heading : "Hi This is One",
+        Date: "Sept 5, 2016",
+        Content : `
+<div class = "container">
+
+<div>
+<a href="/"> Home </a>
+</div>
+
+<hr/>
+
+<h3>
+Article one
+</h3>
+
+<div>
+Sept 5, 2016
+</div>
+
+<div>
+<p>
+This is the content
+</p>
+<p>
+This is second in the content
+</p>
+</div>
+
+</div>
+` },
+    two : {
+        heading : "Hi This is Two",
+        Date: "Sept 15, 2016",
+        Content : `
+<div class = "container">
+
+<div>
+<a href="/"> Home </a>
+</div>
+
+<hr/>
+
+<h3>
+Article two
+</h3>
+
+<div>
+Sept 5, 2016
+</div>
+
+<div>
+<p>
+This is the content
+</p>
+<p>
+This is second in the content
+</p>
+</div>
+
+</div>
+`
+    },
+    
+    three : {
+        Heading : "Hi This is Three",
+        Date: "Sept 55, 2016",
+        Content : `
+<div class = "container">
+
+<div>
+<a href="/"> Home </a>
+</div>
+
+<hr/>
+
+<h3>
+Article three
+</h3>
+
+<div>
+Sept 5, 2016
+</div>
+
+<div>
+<p>
+This is the content
+</p>
+<p>
+This is second in the content
+</p>
+</div>
+
+</div>
+`
+    }
+}
+function createTemplate(data)
+{
+   var heading = data.Heading;
+   var date = data.Date;
+   var content= data.Content;
+    
+var htmlTemplate = `    
+<html>
+<head>
+<title>
+${heading}
+</title>
+<link href="/ui/style.css" rel="stylesheet" />
+<meta name="viewiport" content="width=device-width, intial-scale=1" />
+${date}
+</head>
+<body>
+{$content}
+</body>
+</html>`;
+return htmlTemplate;
+}
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-app.get('/one', function (req, res){
-   res.sendFile(path.join(__dirname, 'ui', 'one.html'));
+app.get('/:articleName', function (req, res){
+    var articleName = req.params.articleName;
+   res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/two', function (req, res){
-   res.sendFile(path.join(__dirname, 'ui', 'two.html'));
-});
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
