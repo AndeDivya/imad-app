@@ -6,4 +6,4 @@ img.onclick = function()
     
 };
 var element = document.getElementById("main-text");
-element.innerHtml = "New Content";
+element.innerHtml = 'New Content';
