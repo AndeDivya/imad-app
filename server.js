@@ -73,7 +73,6 @@ This is second in the content
 </div>
 `
     },
-    
     three : {
         Heading : "Hi This is Three",
         Date: "Sept 55, 2016",
