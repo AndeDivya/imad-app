@@ -124,7 +124,7 @@ ${heading}
 ${date}
 </head>
 <body>
-{$content}
+${content}
 </body>
 </html>`;
 return htmlTemplate;
