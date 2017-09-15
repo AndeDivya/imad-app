@@ -16,23 +16,23 @@ img.onclick = function()
 var button = document.getElementById('counter');
 
 //var footer = document.getElementsByClassName("footer");
-var request1 = new XMLHttpRequest();
+//var request1 = new XMLHttpRequest();
 
-request1.onreadystatechange = function() 
-    {
-        if(request1.readyState == XMLHttpRequest.DONE)
-        {
-            if(request1.status == 200)
-            {
-                var counter = request1.responseText;
-                 var span = document.getElementById('count');
-                span.innerHTML = counter.toString();
-            }
-        }
-    };
-    
-   request1.open('GET', 'http://divyatulasi93.imad.hasura-app.io/counter', true );
-   request1.send(null);
+//request1.onreadystatechange = function() 
+  //  {
+  //      if(request1.readyState == XMLHttpRequest.DONE)
+  //      {
+   //         if(request1.status == 200)
+  //          {
+   //             var counter = request1.responseText;
+ //                var span = document.getElementById('count');
+  //              span.innerHTML = counter.toString();
+  //          }
+ //       }
+   // };
+ //   
+ //  request1.open('GET', 'http://divyatulasi93.imad.hasura-app.io/counter', true );
+//   request1.send(null);
 
 button.onclick = function()
 {
