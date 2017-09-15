@@ -16,8 +16,9 @@ img.onclick = function()
 var button = document.getElementById('counter');
 
 //var footer = document.getElementsByClassName("footer");
+var reques1t = new XMLHttpRequest();
 
-request.onreadystatechange = function() 
+request1.onreadystatechange = function() 
     {
         if(request.readyState == XMLHttpRequest.DONE)
         {
@@ -30,8 +31,8 @@ request.onreadystatechange = function()
         }
     };
     
-   request.open('GET', 'http://divyatulasi93.imad.hasura-app.io/counter', true );
-   request.send(null);
+   request1.open('GET', 'http://divyatulasi93.imad.hasura-app.io/counter', true );
+   request1.send(null);
 
 button.onclick = function()
 {
