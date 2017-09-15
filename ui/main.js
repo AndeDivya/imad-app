@@ -16,7 +16,7 @@ img.onclick = function()
 var button = document.getElementById('counter');
 
 //var footer = document.getElementsByClassName("footer");
-var reques1t = new XMLHttpRequest();
+var request1 = new XMLHttpRequest();
 
 request1.onreadystatechange = function() 
     {
